@@ -1,0 +1,18 @@
+{
+  "source": "evidence/replay.json replay_only[0]",
+  "scenario": 1,
+  "human_events": [],
+  "replay_event": {
+    "t": 20.45,
+    "f": 409,
+    "a": "ego",
+    "b": "TG",
+    "kind": "contact",
+    "x": 112.4041748046875,
+    "z": 1.75,
+    "fake": true,
+    "contact": "rear"
+  },
+  "reactive_ego_events": [],
+  "reactive_min_ttc": 2.6132442758397123
+}

@@ -1,0 +1,45 @@
+{
+  "format": "avsim-studio/1",
+  "params": {
+    "cutT0": 6.5,
+    "cutDur": 2.4,
+    "cutV": 15.0,
+    "cutDs": -4.0,
+    "cutGap": 12.0,
+    "cutBrake": 0.0,
+    "pedT0": 11.0,
+    "pedV": 1.45,
+    "pedGap": 4.5,
+    "pedLook": 1,
+    "busGo": 17.0,
+    "tgT": 0.9,
+    "mu": 0.8,
+    "civil": true
+  },
+  "policy": {},
+  "hazards": [
+    {
+      "type": "bike",
+      "x": -20.0,
+      "lane": "E2",
+      "d": 0.8,
+      "v": 3.0,
+      "swerve": 3.8,
+      "swDur": 2.6,
+      "t0": 0.0,
+      "trig": 20.0
+    }
+  ],
+  "ego": "planner",
+  "space": {
+    "h0_x": [-20.0, 10.0],
+    "h0_d": [0.5, 1.0],
+    "h0_v": [3.0, 5.0],
+    "h0_swerve": [3.2, 3.8],
+    "h0_swDur": [2.6, 3.2],
+    "h0_t0": [0.0, 1.0],
+    "h0_trig": [15.0, 35.0]
+  },
+  "exposure": 0.00031,
+  "why": "Exposure proxy, not a local incidence estimate: a naturalistic cycling study reported 6 near-collisions in 127 h 38 min among 13 adult commuters. Scaling 6/(127+38/60) per hour to this simulator's 24 s horizon gives 3.13e-4 per run; near-collisions include several conflict types, so this is an upper-bound prior for the narrower bicycle-intrusion event, with a small non-local sample. Source: https://pmc.ncbi.nlm.nih.gov/articles/PMC3242541/. For space, FHWA reports a bicycle operating sweep width of 1.4 m at the 95th percentile and says cyclists commonly ride 0.8-1.0 m from the curb, where drainage defects can prompt swerving: https://www.fhwa.dot.gov/publications/research/safety/04091/02.cfm. E2 d=0.5-1.0 m places the bike about 0.75-1.25 m from the road edge; swerve=3.2-3.8 m represents an exceptional move across the 3.5 m lane gap, not routine wobble. The 2.6-3.2 s duration keeps peak lateral acceleration below avsim.studio.BIKE_LAT_MAX=3 m/s^2. Replace the exposure prior with local cyclist counts and naturalistic trajectories."
+}
